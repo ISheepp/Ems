@@ -1,0 +1,24 @@
+spring:
+  mvc:
+    view:
+      prefix: /
+      suffix: .jsp
+  application:
+    name: ems
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ems?characterEncodeing=UTF-8
+    username: root
+    password: 123456
+
+
+
+server:
+  servlet:
+    context-path: /ems  #设置项目名称
+    jsp:
+      init-parameters:
+        development: true   #开启jsp页面热部署
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  #mapper项目配置文件的位置
+  type-aliases-package: com.codelin.ems.entity
