@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
@@ -28,5 +29,12 @@ public class EmpController {
         List<Emp> emps = empService.findAll();
         model.addAttribute("emps", emps);
         return "ems/emplist";
+    }
+
+    //添加员工
+    @PostMapping("addEmp")
+    public String addEmp(Emp emp){
+        empService.addEmp(emp);
+        return "redirect:/emp/findAll";
     }
 }

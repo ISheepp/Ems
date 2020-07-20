@@ -5,8 +5,13 @@
 <!--命名空间定义-->
 <mapper namespace="com.codelin.ems.dao.EmpDao">
 
-<select id="findAll" resultType="Emp">
-    select id, name, salary, age
-    from t_emp;
-</select>
+    <select id="findAll" resultType="Emp">
+        select id, name, salary, age
+        from t_emp;
+    </select>
+
+    <insert id="addEmp" parameterType="Emp">
+        insert into t_emp (id, name, salary, age) VALUES (#{id}, #{name}, #{salary}, #{age})
+    </insert>
+
 </mapper>

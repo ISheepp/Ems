@@ -12,4 +12,7 @@ public interface EmpDao {
 
     //查询所有员工
     List<Emp> findAll();
+
+    //添加员工
+    void addEmp(Emp emp);
 }

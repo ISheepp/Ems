@@ -74,7 +74,7 @@
 
 					</table>
 					<p>
-						<input type="button" class="button" value="Add Employee" onclick="location='addEmp.html'"/>
+						<input type="button" class="button" value="Add Employee"  onclick="location='${pageContext.request.contextPath}/ems/addEmp.jsp'"/>
 					</p>
 				</div>
 			</div>

@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * @author lin
@@ -22,5 +23,11 @@ public class EmpServiceImpl implements EmpService {
     @Override
     public List<Emp> findAll() {
         return empDao.findAll();
+    }
+
+    @Override
+    public void addEmp(Emp emp) {
+        emp.setId(UUID.randomUUID().toString());
+        empDao.addEmp(emp);
     }
 }
