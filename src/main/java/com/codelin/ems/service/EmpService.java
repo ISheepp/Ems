@@ -18,4 +18,10 @@ public interface EmpService {
     //添加员工
     void addEmp(Emp emp);
 
+    //删除员工
+    void delete(String id);
+
+    Emp findById(String id);
+
+    void update(Emp emp);
 }

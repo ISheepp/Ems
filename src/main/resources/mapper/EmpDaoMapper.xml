@@ -14,4 +14,16 @@
         insert into t_emp (id, name, salary, age) VALUES (#{id}, #{name}, #{salary}, #{age})
     </insert>
 
+    <delete id="delete" parameterType="String">
+        delete from t_emp where id=#{id}
+    </delete>
+
+    <select id="findById" parameterType="String" resultType="Emp">
+        select id,name,salary,age from t_emp where id=#{id}
+    </select>
+
+    <update id="update" parameterType="Emp">
+        update t_emp set name=#{name}, salary=#{salary}, age=#{age} where id=#{id}
+    </update>
+
 </mapper>

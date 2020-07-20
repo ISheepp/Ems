@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.el.ELManager;
 import java.util.List;
 
 /**
@@ -35,6 +36,28 @@ public class EmpController {
     @PostMapping("addEmp")
     public String addEmp(Emp emp){
         empService.addEmp(emp);
+        return "redirect:/emp/findAll";
+    }
+
+    //删除员工
+    @GetMapping("delete")
+    public String delete(String id){
+        empService.delete(id);
+        return "redirect:/emp/findAll";
+    }
+
+    //根据id查询
+    @GetMapping("findOne")
+    public String findOne(String id, Model model){
+        Emp emp = empService.findById(id);
+        model.addAttribute("emp", emp);
+        return "ems/updateEmp";
+    }
+
+    //更新员工信息
+    @PostMapping("update")
+    public String update(Emp emp){
+        empService.update(emp);
         return "redirect:/emp/findAll";
     }
 }

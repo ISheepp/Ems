@@ -15,4 +15,13 @@ public interface EmpDao {
 
     //添加员工
     void addEmp(Emp emp);
+
+    //删除员工
+    void delete(String id);
+
+    //根据id查询员工信息
+    Emp findById(String id);
+
+    //更新员工信息
+    void update(Emp emp);
 }
