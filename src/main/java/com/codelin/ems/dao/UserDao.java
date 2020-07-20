@@ -1,7 +1,7 @@
 package com.codelin.ems.dao;
 
-        import com.codelin.ems.entity.User;
-        import org.apache.ibatis.annotations.Param;
+import com.codelin.ems.entity.User;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * @author lin
@@ -14,4 +14,6 @@ public interface UserDao {
 
     //登录的方法
     User findByUsernameAndPassword(@Param("username") String username, @Param("password") String password);
+
+    //
 }

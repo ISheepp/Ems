@@ -1,3 +1,5 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -48,40 +50,28 @@
 								Operation
 							</td>
 						</tr>
+
+						<c:forEach items="${requestScope.emps}" var="emp">
 						<tr class="row1">
 							<td>
-								1
+								${emp.id}
 							</td>
 							<td>
-								zhangshan
+								${emp.name}
 							</td>
 							<td>
-								20000
+								${emp.salary}
 							</td>
 							<td>
-								20
-							</td>
-							<td>
-								<a href="emplist.jsp">delete emp</a>&nbsp;<a href="updateEmp.html">update emp</a>
-							</td>
-						</tr>
-						<tr class="row2">
-							<td>
-								2
-							</td>
-							<td>
-								lishi
-							</td>
-							<td>
-								20000
-							</td>
-							<td>
-								20
+								${emp.age}
 							</td>
 							<td>
 								<a href="emplist.jsp">delete emp</a>&nbsp;<a href="updateEmp.html">update emp</a>
 							</td>
+						</c:forEach>
+
 						</tr>
+
 					</table>
 					<p>
 						<input type="button" class="button" value="Add Employee" onclick="location='addEmp.html'"/>

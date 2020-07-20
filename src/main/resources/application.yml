@@ -7,7 +7,7 @@ spring:
     name: ems
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/ems?characterEncodeing=UTF-8
+    url: jdbc:mysql://localhost:3306/ems?characterEncodeing=UTF-8&useSSL=false
     username: root
     password: 123456
 

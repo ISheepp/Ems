@@ -50,7 +50,7 @@ public class UserController {
         //判断 user为空 用户名密码错误   不为空  登陆成功
         if(user!=null){
             session.setAttribute("user",user);
-            return "redirect:/ems/emplist.jsp";//查询员工的所有
+            return "redirect:/emp/findAll";//查询员工的所有
         }else {
             return "redirect:/ems/login.jsp";
         }
